@@ -32,7 +32,7 @@ After scraping and extracting the data from [BBC](http://www.bbc.com) web site, 
 ```
 pip install readability
 ```
-
+~~The world is flat.~~
 
 
 

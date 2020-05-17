@@ -6,9 +6,8 @@ The goal of this coding challenge is to create a solution that crawls for articl
 * Store the data in a hosted Mongo database, e.g. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), for subsequent search and retrieval.
 * Finally, writing an API that provides access to the content in the mongo database to search for articles by keyword.
 
-## Description : 
+## Specifications : 
 ### 1. Crawl the news articles :
-
 
 
 

@@ -27,7 +27,7 @@ If you want to crawl bbc and save the data in a json file (e.g. bbc.json) :
 ```
 scrapy crawl 'spider_name' -o bbc.json
 ```
-This spider can mainly scrape the articles  contents from the home page of bbc. The extracted data is in this form :
+This spider can mainly scrape the articles contents from the home page of bbc. The structure of the extracted data like to this form :
 ```
 {
 "title": "The robot assistant that can guess what you want",

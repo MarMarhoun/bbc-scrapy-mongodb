@@ -23,11 +23,11 @@ Finally, when we finish building the web spider in the directory of the project 
 ```
 scrapy crawl 'spider_name'
 ```
-If you want to crawl bbc and save the data in a json file (e.g. called bbc.json), 
+If you want to crawl bbc and save the data in a json file (e.g. bbc.json) :
 ```
 scrapy crawl 'spider_name' -o bbc.json
 ```
-This spider can mainly scrape the articles  contents from the home page of bbc. The extracted data is in this form:
+This spider can mainly scrape the articles  contents from the home page of bbc. The extracted data is in this form :
 ```
 {
 "title": "The robot assistant that can guess what you want",
@@ -43,7 +43,7 @@ After scraping and extracting the data from [BBC](http://www.bbc.com) web site, 
 ```
 pip install readability
 ```
-> __PS:__ I didn't need the Readability framework in my project,  I just extract the necessary data.
+> __PS:__ I didn't need the Readability framework in my project, I just extract the necessary data.
 
 ## 3. Store the crawled data :
 Each time an item is returned, we must validate the data and then add it to a Mongo collection. To do this, the initial step is to create the database that we plan to use to save all of our crawled data. Open settings.py and specify the pipeline and add the database settings:

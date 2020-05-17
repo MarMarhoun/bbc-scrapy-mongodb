@@ -68,3 +68,59 @@ pip install flask
 We use Flask framework API to fetch news articles in a mongodb database. This API contains two endpoints:
  * The first one is to show all articles in the database.
  * The second one to search for articles that contains a keywordentered by a user in their titles or text.
+
+```
+# show all news articles
+@app.route('/DB', methods=['GET'])
+def all_news():
+    if request.method == 'GET':
+        jsons = request.args.get('json', 'off')
+        DB_list = []
+        article = name.find()
+        for i in article:
+            DB_list.append(i)
+        
+        if jsons == 'off':
+            return render_template('database.html', entries=DB_list)
+        else:
+            return toJson(DB_list)
+```
+```
+# Search for specific news using a keyword
+# and returning all selected articles's data
+        
+@app.route('/search', methods=['GET'])
+@app.route('/search/<item>', methods=['GET'])
+def get_searched(item=None):
+    if request.method == 'GET':
+        page = request.args.get('page', 1, type=int)
+        limit = request.args.get('limit', 60, type=int)
+        p = (page - 1) * limit
+        offset = request.args.get('offset', p, type=int)
+        catid = request.args.get('catid', None, type=str)
+        jsons = request.args.get('json', 'off')
+        keyword = request.args.get('key', '')
+        
+        if not keyword:
+            keyword = item
+
+        if catid:
+            cursor = name.find({'title.catid': catid})
+        else:
+            cursor = name.find({'description': {'$regex': keyword} })
+
+        
+        results = cursor.skip(offset).limit(limit)
+        resultList = []
+        for result in results:
+            resultList.append(result)
+
+        if jsons == 'off':
+            return render_template('search.html', entries=resultList)
+        else:
+            return toJson(resultList)
+```
+After creating the needed endpoints that the user will claim it, this is the main page :
+![Main page](main_page.png)
+
+> To test your created API you can use __POSTMAN__  or any browser you prefer.

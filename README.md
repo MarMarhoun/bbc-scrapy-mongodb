@@ -32,7 +32,6 @@ After scraping and extracting the data from [BBC](http://www.bbc.com) web site, 
 ```
 pip install readability
 ```
-~~The world is flat.~~
-
+> __PS:__ I didn't need the Readability framework in my project,  I just extract the necessary data.
 
 

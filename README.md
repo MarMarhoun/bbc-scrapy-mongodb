@@ -29,12 +29,14 @@ scrapy crawl 'spider_name' -o bbc.json
 ```
 This spider can mainly scrape the articles  contents from the home page of bbc. The extracted data is in this form:
 ```
-{"title": "The robot assistant that can guess what you want",
+{
+"title": "The robot assistant that can guess what you want",
 "description": "Thomas Roszak was working as a maintenance technician at Ocado's giant warehouse in Hatfield when he received a very unusual assignment.",
 "url": "https://www.bbc.com/news/business-52547331",
 "Type": "Business",
 "time": "12 May 2020",
-"related_topics": "Robotics"}
+"related_topics": "Robotics"
+}
 ```
 ### 2. Cleanse the articles:
 After scraping and extracting the data from [BBC](http://www.bbc.com) web site, we can find some superfluous content such as advertising and HTML in the news data. For this, we can use a framework such as [Readability](https://pypi.org/project/readability/) to cleanse the page  to get information related to the news stories only. We can use the command below to install the framework Readability :

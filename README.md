@@ -11,7 +11,9 @@ The goal of this coding challenge is to create a solution that crawls for articl
 A crawler is needed to start crawl the news articles from the news website, therefore we used is Scrapy framework that help us extracting the data from websites. To install it we use the following command : \
 'pip install scrapy' \
 `pip install scrapy` \
-```pip install scrapy```
+```
+pip install scrapy
+```
 
 
 

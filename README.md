@@ -7,7 +7,7 @@ The goal of this coding challenge is to create a solution that crawls for articl
 * Finally, writing an API that provides access to the content in the mongo database to search for articles by keyword.
 
 ## Description : 
-1. Crawl the news articles :
+### 1. Crawl the news articles :
 
 
 

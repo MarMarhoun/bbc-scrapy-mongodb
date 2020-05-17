@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<br/><h3 style="color:#364d63;"><strong>Our search results : </strong> </h3><br/><br/>
+<ul class="entries list-unstyled">
+
+{% for entry in entries %}
+  
+  <li style="background-color:Lavender;" class="row" ><br>
+    <div class="col-xs-2 col-sm-1">
+    </div>
+    
+    <div class="col-xs-2 col-sm-4">
+      <span class="hidden-sm hidden-xs">
+          <h4 style="color:#3377FF;" >Title: </h4>{{ entry.title }}</span><br/><br/>
+      <span class="hidden-sm hidden-xs">
+          <h4 style="color:#3377FF;">Description:</h4> {{ entry.description }} </span><br/><br/>
+          <h4 style="color:#3377FF;">ID: </h4><p>"{{ entry._id }}"</p><br/>
+      
+    </div>
+    <div style="background-color:Lavender;" class="col-xs-2 col-sm-4">
+      <span class="hidden-sm hidden-xs"> 
+          <h5 style="color:#3377FF;" >Serie: </h5> {{ entry.Type }}</span><br/><br/>
+      <span class="hidden-sm hidden-xs"> 
+          <h5 style="color:#3377FF;" >Related topic: </h5> {{ entry.related_topics }}</span><br/> <br/>
+      <span class="hidden-sm hidden-xs"> 
+          <h5 style="color:#3377FF;" >Published in: </h5> {{ entry.time }}</span><br/><br/>
+      <span class="hidden-sm hidden-xs">
+          <a style="color:#FF5733;" href={{ entry.url }}><strong>Link</strong></a></span><br/><br/>
+    </div>
+    
+{% else %} 
+  <li><em>Unbelievable. No entries here so far.</em>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

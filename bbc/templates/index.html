@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row page">
+  <div class="col-xs-12 text-center">
+  
+    <h1>BBC News scraping using Scrapy and MongoDB</h1>
+    <p>Our scraper extract <span class="package-amount"> <strong>{{ total }}</strong> articles.</span>
+    </p><br>
+    <form role="search" class="navbar-form" action="search" method="get">
+      <div class="form-group">
+        <input type="text" name="key" placeholder="Please enter keyword"
+          class="search form-control clearable">
+          <input type="hidden" name="page" value="1">
+          <button class="btn btn-primary" type="submit">search for</button>
+          <br><br><br><br><br><br>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -57,7 +57,7 @@ ITEM_PIPELINES = {
     'bbc.pipelines.BbcPipeline': 300
 }
 ```
-> **PS:** I did use the __MongoDB Compass__ GUI tool, for visualizing our crawled data.
+> **PS:** I used the __MongoDB Compass__ GUI tool, for visualizing our crawled data.
 
 ## 4. Create Flask API :
 The fourth objectif of our challenge is to creat an API that provides access to the content in the mongo database, and the user should be able to search for articles by keyword. Therefore, I build an API using Flask framework by employing Flask-PyMongo to establish connection between the Flask server and the MongoDB.

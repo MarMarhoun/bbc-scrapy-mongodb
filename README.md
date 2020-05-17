@@ -120,7 +120,8 @@ def get_searched(item=None):
         else:
             return toJson(resultList)
 ```
-After creating the needed endpoints that the user will claim it, this is the main page :
+After creating the needed endpoints that the user will claim it, this is the main page :\
+
 ![Main page](https://github.com/MarMarhoun/bbc-scrapy-mongodb/blob/master/bbc/img/main_page.PNG)
 
 > To test your created API you can use __POSTMAN__  or any browser you prefer.

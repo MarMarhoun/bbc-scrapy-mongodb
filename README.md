@@ -64,5 +64,5 @@ The fourth objectif of our challenge is to creat an API that provides access to 
 pip install flask
 ```
 We use Flask framework API to fetch news articles in a mongodb database. This API contains two endpoints:
-- 1) The first one is to show all articles  in the database
-- 2) The second one to search for articles that contains a keywordentered by a user in their titles or text
+ * The first one is to show all articles in the database.
+ * The second one to search for articles that contains a keywordentered by a user in their titles or text.

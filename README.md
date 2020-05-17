@@ -121,6 +121,6 @@ def get_searched(item=None):
             return toJson(resultList)
 ```
 After creating the needed endpoints that the user will claim it, this is the main page :
-![Main page](main_page.png)
+![Main page](bbc/img/main_page.png)
 
 > To test your created API you can use __POSTMAN__  or any browser you prefer.

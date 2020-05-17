@@ -27,6 +27,15 @@ If you want to crawl bbc and save the data in a json file (e.g. called bbc.json)
 ```
 scrapy crawl 'spider_name' -o bbc.json
 ```
+This spider can mainly scrape the articles  contents from the home page of bbc. The extracted data is in this form:
+```
+{"title": "The robot assistant that can guess what you want",
+"description": "Thomas Roszak was working as a maintenance technician at Ocado's giant warehouse in Hatfield when he received a very unusual assignment.",
+"url": "https://www.bbc.com/news/business-52547331",
+"Type": "Business",
+"time": "12 May 2020",
+"related_topics": "Robotics"}
+```
 ### 2. Cleanse the articles:
 After scraping and extracting the data from [BBC](http://www.bbc.com) web site, we can find some superfluous content such as advertising and HTML in the news data. For this, we can use a framework such as [Readability](https://pypi.org/project/readability/) to cleanse the page  to get information related to the news stories only. We can use the command below to install the framework Readability :
 ```
@@ -34,4 +43,26 @@ pip install readability
 ```
 > __PS:__ I didn't need the Readability framework in my project,  I just extract the necessary data.
 
+## 3. Store the crawled data :
+Each time an item is returned, we must validate the data and then add it to a Mongo collection. To do this, the initial step is to create the database that we plan to use to save all of our crawled data. Open settings.py and specify the pipeline and add the database settings:
+```
+MONGO_URI='localhost'
+MONGODB_PORT = 27017
+MONGO_DB='bbcNews'#db name
+MONGODB_COLLECTION = "News"
 
+ITEM_PIPELINES = {
+    'bbc.pipelines.BbcPipeline': 300
+}
+```
+I did use the __MongoDB Compass__ GUI tool, for visualizing our crawled data.
+
+## 4. Create Flask API :
+The fourth objectif of our challenge is to creat an API that provides access to the content in the mongo database, and the user should be able to search for articles by keyword. Therefore, I build an API using Flask framework by employing Flask-PyMongo to establish connection between the Flask server and the MongoDB.
+
+```
+pip install flask
+```
+We use Flask framework API to fetch news articles in a mongodb database. This API contains two endpoints:
+##### 1) The first one is to show all articles  in the database
+##### 2) The second one to search for articles that contains a keywordentered by a user in their titles or text
